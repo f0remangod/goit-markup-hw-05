@@ -524,7 +524,7 @@ ul {
   display: block;
   text-decoration: none;
   box-shadow: none;
-  transition: box-shadow 2500ms var(--timing-function);
+  transition: box-shadow 250ms var(--timing-function);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
