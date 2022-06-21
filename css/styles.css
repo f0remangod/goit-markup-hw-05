@@ -58,13 +58,29 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+
 .current,
 .nav-li:hover,
 .nav-li:focus,
 .contacts-links:hover,
 .contacts-links:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.main-nav-li {
+  position: relative;
+}
+.current::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .contacts-links {
   display: flex;
   align-items: center;
@@ -158,6 +174,7 @@ ul {
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--hero-btn-hover);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* преимущества */
 .benefits-li-div {
@@ -226,6 +243,24 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+.activities-overlay {
+  position: relative;
+}
+.activities-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--footer-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* наша команда */
 .team {
   padding-top: 94px;
@@ -280,10 +315,12 @@ ul {
 .social-link:hover .ellipse,
 .social-link:focus .ellipse {
   background-color: #2196f3;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover .team-icon,
 .social-link:focus .team-icon {
   fill: var(--footer-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Постоянные клиенты */
@@ -308,10 +345,12 @@ ul {
 .clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
   fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover .rectangle,
 .clients-link:focus .rectangle {
   border-color: var(--accent-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* подвал */
 
@@ -345,6 +384,7 @@ ul {
 .footer-contacts:hover,
 .footer-contacts:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-right {
   min-width: 206px;
@@ -405,6 +445,9 @@ ul {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list {
   display: flex;
@@ -426,6 +469,29 @@ ul {
   max-width: 100%;
   height: auto;
 }
+
+.portfolio-overlay {
+  position: relative;
+}
+.portfolio-overlay-text {
+  position: absolute;
+  /* visibility: hidden; */
+  bottom: 0;
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  opacity: 0;
+  color: var(--footer-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  /* color: transparent; */
+}
+.portfolio-list-item:hover .portfolio-overlay-text {
+  /* visibility: visible; */
+  opacity: 1;
+}
+
 .card-bottom {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -454,4 +520,46 @@ ul {
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* моадльное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  min-width: 528px;
+  min-height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--footer-color);
+}
+.close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--footer-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close-icon {
+  /* нужно центрировать иконку внутри родителя */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

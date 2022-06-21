@@ -60,7 +60,9 @@
       <section class="section hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-btn" type="button">Заказать услугу</button>
+          <button data-modal-open class="hero-btn" type="button">
+            Заказать услугу
+          </button>
         </div>
       </section>
       <!-- преимущества -->
@@ -126,31 +128,40 @@
           <h2 class="activities-title">Чем мы занимаемся</h2>
           <ul class="activities-ul">
             <li class="activities-li">
-              <img
-                class="pic"
-                src="./images/box1.jpg"
-                alt="Реализация алгоритма на компьютере"
-                width="370"
-                height="294"
-              />
+              <div class="activities-overlay">
+                <img
+                  class="pic"
+                  src="./images/box1.jpg"
+                  alt="Реализация алгоритма на компьютере"
+                  width="370"
+                  height="294"
+                />
+                <p class="activities-text">Десктопные приложения</p>
+              </div>
             </li>
             <li class="activities-li">
-              <img
-                class="pic"
-                src="./images/box2.jpg"
-                alt="Создание мобильного приложения"
-                width="370"
-                height="294"
-              />
+              <div class="activities-overlay">
+                <img
+                  class="pic"
+                  src="./images/box2.jpg"
+                  alt="Реализация алгоритма на компьютере"
+                  width="370"
+                  height="294"
+                />
+                <p class="activities-text">Мобильные приложения</p>
+              </div>
             </li>
             <li class="activities-li">
-              <img
-                class="pic"
-                src="./images/box3.jpg"
-                alt="Создание дизайна"
-                width="370"
-                height="294"
-              />
+              <div class="activities-overlay">
+                <img
+                  class="pic"
+                  src="./images/box3.jpg"
+                  alt="Реализация алгоритма на компьютере"
+                  width="370"
+                  height="294"
+                />
+                <p class="activities-text">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -628,5 +639,31 @@
         </div>
       </div>
     </footer>
+
+    <!-- модальное окно -->
+    <div data-modal class="backdrop">
+      <div class="modal is-hidden">
+        <button class="close-btn" data-modal-close>
+          <!-- <svg width="11px" height="11px" aria-label="Close">
+            <use href="./images/close.svg"></use>
+          </svg> -->
+          <svg
+            class="close-icon"
+            width="11"
+            height="11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            --
+          >
+            >
+            <path
+              d="M11 1.108 9.892 0 5.5 4.392 1.108 0 0 1.108 4.392 5.5 0 9.892 1.108 11 5.5 6.608 9.892 11 11 9.892 6.608 5.5 11 1.108Z"
+              fill="#000"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
