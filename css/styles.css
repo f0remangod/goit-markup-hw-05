@@ -556,7 +556,7 @@ ul {
   border-radius: 50%;
   cursor: pointer;
 }
-.close-icon {
+.modal-icon {
   position: absolute;
   left: 50%;
   top: 50%;
