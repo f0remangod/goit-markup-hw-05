@@ -557,7 +557,6 @@ ul {
   cursor: pointer;
 }
 .close-icon {
-  /* нужно центрировать иконку внутри родителя */
   position: absolute;
   left: 50%;
   top: 50%;
